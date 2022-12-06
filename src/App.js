@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AnotherShowData from "./components/AnotherShowData";
+import Counter from "./components/Counter";
+import ShowCounter from "./components/ShowCounter";
+import ShowData from "./components/ShowData";
+import { useState } from "react";
 
 function App() {
+  const [newData, setNewData] = useState(20);
+  const [newData1, setNewData1] = useState(20);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ShowCounter />
+      <Counter />
+      <div style={{ marginTop: "4rem" }}>
+        <ShowData newData={newData} newData1={newData1} />
+        <AnotherShowData newData={newData} />
+      </div>
+    </>
   );
 }
 
